@@ -21,7 +21,15 @@
         <td>{{ employee.phone }}</td>
         <td>{{ employee.salary }}</td>
         <td>{{ employee.department }}</td>
-        <td><button type="button" class="btn btn-info">Детали</button></td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-info"
+            [routerLink]="['/employees', 'edit', employee.id]"
+          >
+            Детали
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -24,4 +24,22 @@ export class EmployeesService {
       addEmployeeRequest
     );
   }
+
+  public getEmployee(id: string): Observable<Employee> {
+    return this.http.get<Employee>(`${this.baseUrl}/${this.url}/` + id);
+  }
+
+  public updateEmployee(
+    id: string,
+    updateEmployeeRequest: Employee
+  ): Observable<Employee> {
+    return this.http.put<Employee>(
+      `${this.baseUrl}/${this.url}/` + id,
+      updateEmployeeRequest
+    );
+  }
+
+  public deleteEmployee(id: string): Observable<Employee> {
+    return this.http.delete<Employee>(`${this.baseUrl}/${this.url}/` + id);
+  }
 }

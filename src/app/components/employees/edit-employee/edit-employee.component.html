@@ -1,1 +1,85 @@
-<p>edit-employee works!</p>
+<div class="container">
+  <h1 class="mb-3">Редактирование данных сотрудника</h1>
+
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="updateEmployee()">
+        <div class="mb-3">
+          <label for="id" class="form-label">Идентификатор</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            name="id"
+            readonly
+            [(ngModel)]="employeeDetails.id"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Имя</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            [(ngModel)]="employeeDetails.name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Электронная почта</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="employeeDetails.email"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Номер телефона</label>
+          <input
+            type="number"
+            class="form-control"
+            id="phone"
+            name="phone"
+            [(ngModel)]="employeeDetails.phone"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="salary" class="form-label">Зарплата</label>
+          <input
+            type="number"
+            class="form-control"
+            id="salary"
+            name="salary"
+            [(ngModel)]="employeeDetails.salary"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="department" class="form-label">Отдел</label>
+          <input
+            type="text"
+            class="form-control"
+            id="department"
+            name="department"
+            [(ngModel)]="employeeDetails.department"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success mr-5">Сохранить</button>
+        <button
+          class="btn btn-danger"
+          (click)="deleteEmployee(employeeDetails.id)"
+        >
+          Удалить
+        </button>
+        <button class="btn btn-primary" (click)="cancel()">Отмена</button>
+      </form>
+    </div>
+  </div>
+</div>
