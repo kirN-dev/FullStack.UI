@@ -4,20 +4,24 @@
   <table class="table" *ngIf="employees && employees.length > 0">
     <thead>
       <tr>
+        <th>Идентификатор</th>
         <th>Имя</th>
         <th>Электронная почта</th>
         <th>Телефон</th>
         <th>Зарплата</th>
         <th>Отдел</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
         <td>{{ employee.name }}</td>
         <td>{{ employee.email }}</td>
         <td>{{ employee.phone }}</td>
         <td>{{ employee.salary }}</td>
         <td>{{ employee.department }}</td>
+        <td><button type="button" class="btn btn-info">Детали</button></td>
       </tr>
     </tbody>
   </table>
